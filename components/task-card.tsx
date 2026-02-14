@@ -108,7 +108,7 @@ export function TaskCardComponent({
       <div className="flex items-start gap-1 min-w-0">
         <button
           type="button"
-          className={`mt-0.5 shrink-0 ${status.className}`}
+          className={`shrink-0 p-1.5 -m-1 hover:bg-accent rounded transition-colors ${status.className}`}
           onClick={(e) => {
             e.stopPropagation()
             const next = card.status === "todo" ? "done" : "todo"
@@ -116,7 +116,7 @@ export function TaskCardComponent({
           }}
           aria-label={`ステータスを変更: ${status.label}`}
         >
-          <StatusIcon className="h-3 w-3" />
+          <StatusIcon className="h-5 w-5" />
         </button>
         <div className="flex-1 min-w-0">
           <AutoShrinkTitle text={card.title} done={card.status === "done"} />
